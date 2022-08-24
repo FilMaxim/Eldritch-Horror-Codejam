@@ -1,7 +1,7 @@
 import ancientsData from "./data/ancients.js";
 import cardsDataGreen from "./data/mythicCards/green/index.js";
 import cardsDataBlue from "./data/mythicCards/blue/index.js";
-import cardsDataBroun from "./data/mythicCards/brown/index.js";
+import cardsDataBrown from "./data/mythicCards/brown/index.js";
 
 const ancients = document.querySelector(".ancients-container");
 let activeAncient;
@@ -42,7 +42,7 @@ form.addEventListener("click", () => {
   for (let i = 0; i < radio.length; i++) {
     if (radio[i].checked) {
       difficulty = radio[i].value;
-      console.log(difficulty);
+
       break;
     }
   }
@@ -53,13 +53,139 @@ function random(min, max) {
   return Math.floor(rand);
 }
 
+// создаем массивы карт зеленый, коричневый и синий для среднего уровня сложности
+function greenMedium() {
+  let green = [];
+  let greenLong =
+    ancientsData[activeAncient].firstStage.greenCards +
+    ancientsData[activeAncient].secondStage.greenCards +
+    ancientsData[activeAncient].thirdStage.greenCards;
+  let sortCardsDataGreen;
+  if (difficulty === "medium") {
+    sortCardsDataGreen = cardsDataGreen;
+  }
+  if (difficulty === "easy") {
+    sortCardsDataGreen = cardsDataGreen.filter(
+      (elem) => elem.difficulty !== "hard"
+    );
+  }
+  if (difficulty === "high") {
+    sortCardsDataGreen = cardsDataGreen.filter(
+      (elem) => elem.difficulty !== "easy"
+    );
+  }
+
+  while (green.length < greenLong) {
+    let j = random(1, sortCardsDataGreen.length);
+    if (!green.includes(j)) {
+      green.push(j);
+    }
+  }
+  for (let i = 0; i < green.length; i++) {
+    green[i] = sortCardsDataGreen[green[i] - 1];
+    console.log(green[i]);
+  }
+  return green;
+}
+
+function brownMedium() {
+  let brown = [];
+  let brownLong =
+    ancientsData[activeAncient].firstStage.brownCards +
+    ancientsData[activeAncient].secondStage.brownCards +
+    ancientsData[activeAncient].thirdStage.brownCards;
+
+  let sortCardsDataBrown;
+  if (difficulty === "medium") {
+    sortCardsDataBrown = cardsDataBrown;
+  }
+  if (difficulty === "easy") {
+    sortCardsDataBrown = cardsDataBrown.filter(
+      (elem) => elem.difficulty !== "hard"
+    );
+  }
+  if (difficulty === "high") {
+    sortCardsDataBrown = cardsDataBrown.filter(
+      (elem) => elem.difficulty !== "easy"
+    );
+  }
+
+  while (brown.length < brownLong) {
+    let j = random(1, sortCardsDataBrown.length);
+    if (!brown.includes(j)) {
+      brown.push(j);
+    }
+  }
+  for (let i = 0; i < brown.length; i++) {
+    brown[i] = sortCardsDataBrown[brown[i] - 1];
+  }
+  return brown;
+}
+
+function blueMedium() {
+  let blue = [];
+  let blueLong =
+    ancientsData[activeAncient].firstStage.blueCards +
+    ancientsData[activeAncient].secondStage.blueCards +
+    ancientsData[activeAncient].thirdStage.blueCards;
+
+  let sortCardsDataBlue;
+  if (difficulty === "medium") {
+    sortCardsDataBlue = cardsDataBlue;
+  }
+  if (difficulty === "easy") {
+    sortCardsDataBlue = cardsDataBlue.filter(
+      (elem) => elem.difficulty !== "hard"
+    );
+  }
+  if (difficulty === "high") {
+    sortCardsDataBlue = cardsDataBlue.filter(
+      (elem) => elem.difficulty !== "easy"
+    );
+  }
+
+  while (blue.length < blueLong) {
+    let j = random(1, sortCardsDataBlue.length);
+    if (!blue.includes(j)) {
+      blue.push(j);
+    }
+  }
+  for (let i = 0; i < blue.length; i++) {
+    blue[i] = sortCardsDataBlue[blue[i] - 1];
+  }
+  return blue;
+}
+// создаем массивы карт зеленый, коричневый и синий для легкого уровня сложности
+function greenEasy() {
+  let green = [];
+  let greenLong =
+    ancientsData[activeAncient].firstStage.greenCards +
+    ancientsData[activeAncient].secondStage.greenCards +
+    ancientsData[activeAncient].thirdStage.greenCards;
+
+  let sortCardsDataGreen = cardsDataGreen.filter(
+    (elem) => elem.difficulty !== "hard"
+  );
+
+  while (green.length < greenLong) {
+    let j = random(1, sortCardsDataGreen.length);
+    if (!green.includes(j)) {
+      green.push(j);
+    }
+  }
+
+  for (let i = 0; i < green.length; i++) {
+    green[i] = sortCardsDataGreen[green[i] - 1];
+  }
+  return green;
+}
+
 //клик на кнопку Замешать колоду
 const btnMix = document.querySelector(".deck-container");
 const firstStage = document.querySelectorAll(".dots-container");
 let arrCardAzathoth = [[], [], []];
 
 const btnClick = () => {
-
   firstStage[0].children[0].innerHTML =
     ancientsData[activeAncient].firstStage.greenCards;
   firstStage[0].children[1].innerHTML =
@@ -82,54 +208,18 @@ const btnClick = () => {
     ancientsData[activeAncient].thirdStage.blueCards;
 
   //создаем массив
+  let green;
+  let brown;
+  let blue;
 
-  let green = [];
-  let greenLong =
-    ancientsData[activeAncient].firstStage.greenCards +
-    ancientsData[activeAncient].secondStage.greenCards +
-    ancientsData[activeAncient].thirdStage.greenCards;
-
-  while (green.length < greenLong) {
-    let j = random(1, 18);
-    if (!green.includes(j)) {
-      green.push(j);
-    }
-  }
-
-  for (let i = 0; i < green.length; i++) {
-    green[i] = cardsDataGreen[green[i] - 1];
-  }
-
-  let brown = [];
-  let brownLong =
-    ancientsData[activeAncient].firstStage.brownCards +
-    ancientsData[activeAncient].secondStage.brownCards +
-    ancientsData[activeAncient].thirdStage.brownCards;
-
-  while (brown.length < brownLong) {
-    let j = random(1, 21);
-    if (!brown.includes(j)) {
-      brown.push(j);
-    }
-  }
-  for (let i = 0; i < brown.length; i++) {
-    brown[i] = cardsDataBroun[brown[i] - 1];
-  }
-
-  let blue = [];
-  let blueLong =
-    ancientsData[activeAncient].firstStage.blueCards +
-    ancientsData[activeAncient].secondStage.blueCards +
-    ancientsData[activeAncient].thirdStage.blueCards;
-
-  while (blue.length < blueLong) {
-    let j = random(1, 12);
-    if (!blue.includes(j)) {
-      blue.push(j);
-    }
-  }
-  for (let i = 0; i < blue.length; i++) {
-    blue[i] = cardsDataBlue[blue[i] - 1];
+  if (
+    difficulty === "medium" ||
+    difficulty === "easy" ||
+    difficulty === "high"
+  ) {
+    green = greenMedium();
+    brown = brownMedium();
+    blue = blueMedium();
   }
 
   //заполнение массива
@@ -187,19 +277,25 @@ const nextCard = () => {
     lasrCard.style.backgroundImage = `url('assets/MythicCards/${
       arrCardAzathoth[0][arrCardAzathoth[0].length - 1].color
     }/${arrCardAzathoth[0][arrCardAzathoth[0].length - 1].id}.png')`;
-    document.querySelectorAll(`.${arrCardAzathoth[0][arrCardAzathoth[0].length - 1].color}`)[0].innerHTML -=1
+    document.querySelectorAll(
+      `.${arrCardAzathoth[0][arrCardAzathoth[0].length - 1].color}`
+    )[0].innerHTML -= 1;
     arrCardAzathoth[0].pop();
   } else if (arrCardAzathoth[1].length > 0) {
     lasrCard.style.backgroundImage = `url('assets/MythicCards/${
       arrCardAzathoth[1][arrCardAzathoth[1].length - 1].color
     }/${arrCardAzathoth[1][arrCardAzathoth[1].length - 1].id}.png')`;
-    document.querySelectorAll(`.${arrCardAzathoth[1][arrCardAzathoth[1].length - 1].color}`)[1].innerHTML -=1
+    document.querySelectorAll(
+      `.${arrCardAzathoth[1][arrCardAzathoth[1].length - 1].color}`
+    )[1].innerHTML -= 1;
     arrCardAzathoth[1].pop();
   } else if (arrCardAzathoth[2].length > 0) {
     lasrCard.style.backgroundImage = `url('assets/MythicCards/${
       arrCardAzathoth[2][arrCardAzathoth[2].length - 1].color
     }/${arrCardAzathoth[2][arrCardAzathoth[2].length - 1].id}.png')`;
-    document.querySelectorAll(`.${arrCardAzathoth[2][arrCardAzathoth[2].length - 1].color}`)[2].innerHTML -=1
+    document.querySelectorAll(
+      `.${arrCardAzathoth[2][arrCardAzathoth[2].length - 1].color}`
+    )[2].innerHTML -= 1;
     arrCardAzathoth[2].pop();
   } else {
     lasrCard.style.opacity = 0;
@@ -209,4 +305,3 @@ const nextCard = () => {
 };
 
 deck.addEventListener("click", nextCard);
-console.log(document.querySelectorAll('.green')[1].innerHTML -=1);

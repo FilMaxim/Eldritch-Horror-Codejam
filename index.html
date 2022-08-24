@@ -19,41 +19,78 @@
       <div class="difficulty-container">
         <p class="difficulty">Выберите сложность:</p>
         <form class="form_diff" action="#">
-            <input type="radio" class="diff" id="low" name="difficulty" value="low"/> Низкая
-        <input type="radio" class="diff" id="medium" name="difficulty" value="medium"/> Средняя
-        <input type="radio" class="diff" id="high" name="difficulty" value="high"/> Высокая
+          <input
+            type="radio"
+            class="diff"
+            id="easiest"
+            name="difficulty"
+            value="easiest"
+          />
+          <span class="desc_diff">очень легкий</span>
+          <input
+            type="radio"
+            class="diff"
+            id="easy"
+            name="difficulty"
+            value="easy"
+          />
+          <span class="desc_diff">легкий</span>
+          <input
+            type="radio"
+            class="diff"
+            id="medium"
+            name="difficulty"
+            value="medium"
+          />
+          <span class="desc_diff">средний</span>
+          <input
+            type="radio"
+            class="diff"
+            id="high"
+            name="difficulty"
+            value="high"
+          />
+          <span class="desc_diff">высокий</span>
+          <input
+            type="radio"
+            class="diff"
+            id="highest"
+            name="difficulty"
+            value="highest"
+          />
+          <span class="desc_diff">очень высокий</span>
         </form>
-
       </div>
       <button class="deck-container">Замешать колоду</button>
+
+    </div>
+    <div class="card">
       <div class="current-state">
         <div class="stage-container">
           <span class="stage-text">Первая стадия:</span>
           <div class="dots-container">
-            <div class="dot green">8</div>
-            <div class="dot brown">8</div>
-            <div class="dot blue">8</div>
+            <div class="dot green"></div>
+            <div class="dot brown"></div>
+            <div class="dot blue"></div>
           </div>
         </div>
         <div class="stage-container">
           <span class="stage-text">Вторая стадия:</span>
           <div class="dots-container">
-            <div class="dot green">7</div>
-            <div class="dot brown">7</div>
-            <div class="dot blue">7</div>
+            <div class="dot green"></div>
+            <div class="dot brown"></div>
+            <div class="dot blue"></div>
           </div>
         </div>
         <div class="stage-container">
           <span class="stage-text">Третья стадия: </span>
           <div class="dots-container">
-            <div class="dot green">6</div>
-            <div class="dot brown">6</div>
-            <div class="dot blue">6</div>
+            <div class="dot green"></div>
+            <div class="dot brown"></div>
+            <div class="dot blue"></div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="card">
       <div class="deck"></div>
       <div class="last-card"></div>
     </div>
