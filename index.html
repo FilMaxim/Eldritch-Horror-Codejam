@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/mythicCardBackground.png" rel="Eldritch icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Eldritch Horror</title>
+  </head>
+  <body>
+    <div class="ancients-container">
+      <div class="azathoth"></div>
+      <div class="cthulhu"></div>
+      <div class="iogSothoth"></div>
+      <div class="shubNiggurath"></div>
+    </div>
+    <div class="wapper">
+      <div class="difficulty-container">
+        <p class="difficulty">Выберите сложность:</p>
+        <form class="form_diff" action="#">
+            <input type="radio" class="diff" id="low" name="difficulty" value="low"/> Низкая
+        <input type="radio" class="diff" id="medium" name="difficulty" value="medium"/> Средняя
+        <input type="radio" class="diff" id="high" name="difficulty" value="high"/> Высокая
+        </form>
+
+      </div>
+      <button class="deck-container">Замешать колоду</button>
+      <div class="current-state">
+        <div class="stage-container">
+          <span class="stage-text">Первая стадия:</span>
+          <div class="dots-container">
+            <div class="dot green">8</div>
+            <div class="dot brown">8</div>
+            <div class="dot blue">8</div>
+          </div>
+        </div>
+        <div class="stage-container">
+          <span class="stage-text">Вторая стадия:</span>
+          <div class="dots-container">
+            <div class="dot green">7</div>
+            <div class="dot brown">7</div>
+            <div class="dot blue">7</div>
+          </div>
+        </div>
+        <div class="stage-container">
+          <span class="stage-text">Третья стадия: </span>
+          <div class="dots-container">
+            <div class="dot green">6</div>
+            <div class="dot brown">6</div>
+            <div class="dot blue">6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="deck"></div>
+      <div class="last-card"></div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
