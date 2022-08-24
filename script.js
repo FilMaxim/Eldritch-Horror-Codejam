@@ -186,6 +186,10 @@ const firstStage = document.querySelectorAll(".dots-container");
 let arrCardAzathoth = [[], [], []];
 
 const btnClick = () => {
+  if (!activeAncient) return alert('Выберите древнего!');
+  if (!difficulty) return alert('Выберите сложность!');
+
+  console.log(activeAncient)
   firstStage[0].children[0].innerHTML =
     ancientsData[activeAncient].firstStage.greenCards;
   firstStage[0].children[1].innerHTML =
