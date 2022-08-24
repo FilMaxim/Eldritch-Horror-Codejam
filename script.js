@@ -4,7 +4,7 @@ import cardsDataBlue from "./data/mythicCards/blue/index.js";
 import cardsDataBrown from "./data/mythicCards/brown/index.js";
 
 const ancients = document.querySelector(".ancients-container");
-let activeAncient;
+let activeAncient = "";
 
 // выбор древнего
 const clickAncients = (event) => {
@@ -74,7 +74,28 @@ function greenMedium() {
       (elem) => elem.difficulty !== "easy"
     );
   }
-
+  if (difficulty === "easiest") {
+    sortCardsDataGreen = cardsDataGreen.filter(
+      (elem) => elem.difficulty === "easy"
+    );
+    let sortCardsDataGreenNorm = cardsDataGreen.filter(
+      (elem) => elem.difficulty === "normal"
+    );
+    while (sortCardsDataGreen.length < greenLong) {
+      sortCardsDataGreen.push(sortCardsDataGreenNorm[random(0, sortCardsDataGreenNorm.length -1)]);
+    }
+  }
+  if (difficulty === "highest") {
+    sortCardsDataGreen = cardsDataGreen.filter(
+      (elem) => elem.difficulty === "hard"
+    );
+    let sortCardsDataGreenNorm = cardsDataGreen.filter(
+      (elem) => elem.difficulty === "normal"
+    );
+    while (sortCardsDataGreen.length < greenLong) {
+      sortCardsDataGreen.push(sortCardsDataGreenNorm[random(0, sortCardsDataGreenNorm.length -1)]);
+    }
+  }
   while (green.length < greenLong) {
     let j = random(1, sortCardsDataGreen.length);
     if (!green.includes(j)) {
@@ -83,7 +104,6 @@ function greenMedium() {
   }
   for (let i = 0; i < green.length; i++) {
     green[i] = sortCardsDataGreen[green[i] - 1];
-    console.log(green[i]);
   }
   return green;
 }
@@ -109,7 +129,29 @@ function brownMedium() {
       (elem) => elem.difficulty !== "easy"
     );
   }
-
+  if (difficulty === "easiest") {
+    sortCardsDataBrown = cardsDataBrown.filter(
+      (elem) => elem.difficulty === "easy"
+    );
+    let sortCardsDataBrownNorm = cardsDataBrown.filter(
+      (elem) => elem.difficulty === "normal"
+    );
+    while (sortCardsDataBrown.length < brownLong) {
+      sortCardsDataBrown.push(sortCardsDataBrownNorm[random(0, sortCardsDataBrownNorm.length -1)]);
+    }
+  }
+  if (difficulty === "highest") {
+    sortCardsDataBrown = cardsDataBrown.filter(
+      (elem) => elem.difficulty === "hard"
+    );
+    let sortCardsDataBrownNorm = cardsDataBrown.filter(
+      (elem) => elem.difficulty === "normal"
+    );
+    while (sortCardsDataBrown.length < brownLong) {
+      sortCardsDataBrown.push(sortCardsDataBrownNorm[random(0, sortCardsDataBrownNorm.length -1)]);
+    }
+  }
+  console.log(sortCardsDataBrown)
   while (brown.length < brownLong) {
     let j = random(1, sortCardsDataBrown.length);
     if (!brown.includes(j)) {
@@ -143,6 +185,28 @@ function blueMedium() {
       (elem) => elem.difficulty !== "easy"
     );
   }
+  if (difficulty === "easiest") {
+    sortCardsDataBlue = cardsDataBlue.filter(
+      (elem) => elem.difficulty === "easy"
+    );
+    let sortCardsDataBlueNorm = cardsDataBlue.filter(
+      (elem) => elem.difficulty === "normal"
+    );
+    while (sortCardsDataBlue.length < blueLong) {
+      sortCardsDataBlue.push(sortCardsDataBlueNorm[random(0, sortCardsDataBlueNorm.length -1)]);
+    }
+  }
+  if (difficulty === "highest") {
+    sortCardsDataBlue = cardsDataBlue.filter(
+      (elem) => elem.difficulty === "hard"
+    );
+    let sortCardsDataBlueNorm = cardsDataBlue.filter(
+      (elem) => elem.difficulty === "normal"
+    );
+    while (sortCardsDataBlue.length < blueLong) {
+      sortCardsDataBlue.push(sortCardsDataBlueNorm[random(0, sortCardsDataBlueNorm.length -1)]);
+    }
+  }
 
   while (blue.length < blueLong) {
     let j = random(1, sortCardsDataBlue.length);
@@ -155,30 +219,6 @@ function blueMedium() {
   }
   return blue;
 }
-// создаем массивы карт зеленый, коричневый и синий для легкого уровня сложности
-function greenEasy() {
-  let green = [];
-  let greenLong =
-    ancientsData[activeAncient].firstStage.greenCards +
-    ancientsData[activeAncient].secondStage.greenCards +
-    ancientsData[activeAncient].thirdStage.greenCards;
-
-  let sortCardsDataGreen = cardsDataGreen.filter(
-    (elem) => elem.difficulty !== "hard"
-  );
-
-  while (green.length < greenLong) {
-    let j = random(1, sortCardsDataGreen.length);
-    if (!green.includes(j)) {
-      green.push(j);
-    }
-  }
-
-  for (let i = 0; i < green.length; i++) {
-    green[i] = sortCardsDataGreen[green[i] - 1];
-  }
-  return green;
-}
 
 //клик на кнопку Замешать колоду
 const btnMix = document.querySelector(".deck-container");
@@ -186,10 +226,10 @@ const firstStage = document.querySelectorAll(".dots-container");
 let arrCardAzathoth = [[], [], []];
 
 const btnClick = () => {
-  if (!activeAncient) return alert('Выберите древнего!');
-  if (!difficulty) return alert('Выберите сложность!');
+  if (activeAncient === "") return alert("Выберите древнего!");
+  if (!difficulty) return alert("Выберите сложность!");
 
-  console.log(activeAncient)
+
   firstStage[0].children[0].innerHTML =
     ancientsData[activeAncient].firstStage.greenCards;
   firstStage[0].children[1].innerHTML =
@@ -219,7 +259,9 @@ const btnClick = () => {
   if (
     difficulty === "medium" ||
     difficulty === "easy" ||
-    difficulty === "high"
+    difficulty === "high" ||
+    difficulty === "easiest"||
+    difficulty === "highest"
   ) {
     green = greenMedium();
     brown = brownMedium();
@@ -267,8 +309,6 @@ const btnClick = () => {
 
   document.querySelector(".last-card").style.opacity = 0;
 
-  console.log(activeAncient);
-  console.log(arrCardAzathoth);
 };
 btnMix.addEventListener("click", btnClick);
 
@@ -305,7 +345,7 @@ const nextCard = () => {
     lasrCard.style.opacity = 0;
   }
 
-  console.log(arrCardAzathoth);
+
 };
 
 deck.addEventListener("click", nextCard);
