@@ -219,8 +219,10 @@ hr {
 
 .deck {
     background-image: url(assets/mythicCardBackground.png);
+    cursor: pointer;
 }
 
 .last-card {
     opacity: 1;
+    transition: 1s;
 }

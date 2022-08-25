@@ -324,6 +324,7 @@ btnMix.addEventListener("click", btnClick);
 //клик по карте
 const deck = document.querySelector(".deck");
 const lasrCard = document.querySelector(".last-card");
+
 const nextCard = () => {
   if (arrCardAzathoth[0].length > 0) {
     lasrCard.style.opacity = 1;
