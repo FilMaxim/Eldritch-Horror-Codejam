@@ -329,7 +329,7 @@ const nextCard = () => {
     lasrCard.style.opacity = 1;
     lasrCard.style.backgroundImage = `url('assets/MythicCards/${
       arrCardAzathoth[0][arrCardAzathoth[0].length - 1].color
-    }/${arrCardAzathoth[0][arrCardAzathoth[0].length - 1].id}.png')`;
+    }/${arrCardAzathoth[0][arrCardAzathoth[0].length - 1].id}.webp')`;
     document.querySelectorAll(
       `.${arrCardAzathoth[0][arrCardAzathoth[0].length - 1].color}`
     )[0].innerHTML -= 1;
@@ -337,7 +337,7 @@ const nextCard = () => {
   } else if (arrCardAzathoth[1].length > 0) {
     lasrCard.style.backgroundImage = `url('assets/MythicCards/${
       arrCardAzathoth[1][arrCardAzathoth[1].length - 1].color
-    }/${arrCardAzathoth[1][arrCardAzathoth[1].length - 1].id}.png')`;
+    }/${arrCardAzathoth[1][arrCardAzathoth[1].length - 1].id}.webp')`;
     document.querySelectorAll(
       `.${arrCardAzathoth[1][arrCardAzathoth[1].length - 1].color}`
     )[1].innerHTML -= 1;
@@ -345,7 +345,7 @@ const nextCard = () => {
   } else if (arrCardAzathoth[2].length > 0) {
     lasrCard.style.backgroundImage = `url('assets/MythicCards/${
       arrCardAzathoth[2][arrCardAzathoth[2].length - 1].color
-    }/${arrCardAzathoth[2][arrCardAzathoth[2].length - 1].id}.png')`;
+    }/${arrCardAzathoth[2][arrCardAzathoth[2].length - 1].id}.webp')`;
     document.querySelectorAll(
       `.${arrCardAzathoth[2][arrCardAzathoth[2].length - 1].color}`
     )[2].innerHTML -= 1;

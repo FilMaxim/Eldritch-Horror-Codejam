@@ -5,7 +5,7 @@ html{
 }
 body {
     background: center/cover;
-    background-image: url(assets/home.jpg);
+    background-image: url(assets/home_2.png);
     margin: 0px;
     padding: 0px;
     color: beige;
@@ -29,7 +29,7 @@ body {
 .cthulhu,
 .iogSothoth,
 .shubNiggurath {
-    opacity: 0.5;
+    opacity: 0.4;
     width: 200px;
     background-position: 70%;
     background-size: contain;
@@ -215,7 +215,7 @@ hr {
 }
 
 .deck {
-    background-image: url(assets/mythicCardBackground.png);
+    background-image: url(assets/mythicCardBackground.webp);
     cursor: pointer;
 }
 
