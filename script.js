@@ -3,6 +3,13 @@ import cardsDataGreen from "./data/mythicCards/green/index.js";
 import cardsDataBlue from "./data/mythicCards/blue/index.js";
 import cardsDataBrown from "./data/mythicCards/brown/index.js";
 
+console.log(`Score: 100 /100;\n
+Выполненны все пункты за которые даются балы.\n
+Для связи со мной: \n
+Телеграмм: @max_fil13\n
+Дисхорд: Max13#1323\n
+`)
+
 const ancients = document.querySelector(".ancients-container");
 let activeAncient = "";
 
@@ -151,7 +158,7 @@ function brownMedium() {
       sortCardsDataBrown.push(sortCardsDataBrownNorm[random(0, sortCardsDataBrownNorm.length -1)]);
     }
   }
-  console.log(sortCardsDataBrown)
+
   while (brown.length < brownLong) {
     let j = random(1, sortCardsDataBrown.length);
     if (!brown.includes(j)) {
