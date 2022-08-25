@@ -10,11 +10,10 @@ body {
 .ancients-container {
     margin: 0px;
     padding: 0px;
-    max-width: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 15px;
-    min-width: 100%;
+
     padding-top: 50px;
 }
 
@@ -22,7 +21,7 @@ body {
 .cthulhu,
 .iogSothoth,
 .shubNiggurath {
-    opacity: 0.4;
+    opacity: 0.5;
     width: 200px;
     background-position: 70%;
     background-size: contain;
@@ -32,8 +31,6 @@ body {
     height: 258px;
     border-radius: 13px;
     box-shadow: 7px 7px 5px rgba(236, 152, 152, 0.4);
-
-
 }
 
 .azathoth {
@@ -60,15 +57,16 @@ body {
 
 
 .wapper {
-    padding-left: 25px;
     display: flex;
-    justify-content:flex-start;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+
 }
 
 .difficulty-container {
     display: flex;
-    padding-top: 15px;
+    padding-top: 35px;
     justify-content: center;
     align-items: center;
 }
@@ -76,6 +74,7 @@ body {
     font-size: 24px;
     padding: 5px;
     padding-right: 20px;
+    margin: 0px;
 }
 
 .diff {
@@ -85,27 +84,35 @@ body {
     cursor: pointer;
 }
 
+hr {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 2px auto;
+}
+
 .desc_diff {
     font-size: 22px;
     margin: 0px;
     padding: 0px;
     padding-right: 20px;
-    padding-left: 5px;
+    padding-left: 3px;
 }
 
 .deck-container {
-    font-size: 18px;
-    position: absolute;
-    background-color: rgb(185, 228, 30);
-    border: 2px solid rgb(0, 59, 253);
-    color: rgb(0, 0, 0);
+    font-size: 25px;
+    background-color: rgb(40, 31, 82);
+    border: 2px solid rgb(25, 25, 26);
+    color: rgb(255, 255, 255);
     border-radius: 15px;
     cursor: pointer;
     height: 61px;
     padding: 10px;
-    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.4);
-    left: 139px;
-    top: 437px;
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.7);
+}
+
+.deck-container:hover {
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .stage-container {
@@ -130,11 +137,13 @@ body {
 .dot {
     align-items: center;
     display: flex;
-    height: 30px;
+    height: 40px;
     justify-content: center;
     align-items: center;
-    width: 30px;
+    width: 40px;
     border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    font-size: 22px;
 
 }
 
@@ -152,10 +161,15 @@ body {
 
 .card {
     display: flex;
-    justify-content:flex-start;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
+}
 
-
+.btn_stage {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .current-state {
@@ -165,15 +179,21 @@ body {
     padding: 10px;
     border-radius: 15px;
     height: 136px;
-    margin: 0 10%;
 }
 
+.wapper_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 .deck,
 .last-card {
     height: 380px;
     width: 260px;
     background-size: contain;
     background-repeat: no-repeat;
+    border-radius: 25px;
 
 }
 

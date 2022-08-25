@@ -225,7 +225,8 @@ const btnMix = document.querySelector(".deck-container");
 const firstStage = document.querySelectorAll(".dots-container");
 let arrCardAzathoth = [[], [], []];
 
-const btnClick = () => {
+const btnClick = (event) => {
+  event.preventDefault()
   if (activeAncient === "") return alert("Выберите древнего!");
   if (!difficulty) return alert("Выберите сложность!");
 
@@ -308,6 +309,7 @@ const btnClick = () => {
   arrCardAzathoth[2].sort(() => Math.random() - 0.5);
 
   document.querySelector(".last-card").style.opacity = 0;
+  document.querySelector('.deck').style.opacity = 1;
 
 };
 btnMix.addEventListener("click", btnClick);
@@ -342,7 +344,7 @@ const nextCard = () => {
     )[2].innerHTML -= 1;
     arrCardAzathoth[2].pop();
   } else {
-    lasrCard.style.opacity = 0;
+    document.querySelector('.deck').style.opacity = 0;
   }
 
 
