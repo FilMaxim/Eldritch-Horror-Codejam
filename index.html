@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/mythicCardBackground.webp" rel="Eldritch icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Eldritch Horror</title>
+  </head>
+  <body>
+    <div class="ancients-container">
+      <div class="azathoth"></div>
+      <div class="cthulhu"></div>
+      <div class="iogSothoth"></div>
+      <div class="shubNiggurath"></div>
+    </div>
+    <div class="wapper">
+      <div class="difficulty-container">
+        <p class="difficulty">ВЫБЕРИТЕ СЛОЖНОСТЬ:</p>
+        <form class="form_diff" action="#">
+          <input
+            type="radio"
+            class="diff"
+            id="easiest"
+            name="difficulty"
+            value="easiest"
+          />
+          <span class="desc_diff">очень легкий</span>
+          <input
+            type="radio"
+            class="diff"
+            id="easy"
+            name="difficulty"
+            value="easy"
+          />
+          <span class="desc_diff">легкий</span>
+          <input
+            type="radio"
+            class="diff"
+            id="medium"
+            name="difficulty"
+            value="medium"
+          />
+          <span class="desc_diff">средний</span>
+          <input
+            type="radio"
+            class="diff"
+            id="high"
+            name="difficulty"
+            value="high"
+          />
+          <span class="desc_diff">высокий</span>
+          <input
+            type="radio"
+            class="diff"
+            id="highest"
+            name="difficulty"
+            value="highest"
+          />
+          <span class="desc_diff">очень высокий</span>
+        </form>
+      </div>
+      <hr />
+    </div>
+    <div class="card">
+      <div class="btn_stage">
+        <button class="deck-container">ЗАМЕШАТЬ КОЛОДУ</button>
+        <div class="current-state">
+          <div class="stage-container">
+            <span class="stage-text">Первая стадия:</span>
+            <div class="dots-container">
+              <div class="dot green"></div>
+              <div class="dot brown"></div>
+              <div class="dot blue"></div>
+            </div>
+          </div>
+          <div class="stage-container">
+            <span class="stage-text">Вторая стадия:</span>
+            <div class="dots-container">
+              <div class="dot green"></div>
+              <div class="dot brown"></div>
+              <div class="dot blue"></div>
+            </div>
+          </div>
+          <div class="stage-container">
+            <span class="stage-text">Третья стадия: </span>
+            <div class="dots-container">
+              <div class="dot green"></div>
+              <div class="dot brown"></div>
+              <div class="dot blue"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wapper_card">
+        <div class="deck"></div>
+
+        <div class="last-card">
+
+        </div>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
