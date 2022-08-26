@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'Fiesta';
-    src: url('/fonts/Vampire95.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Vampire95.woff') format('woff'),
-    url('/fonts/Vampire95.ttf')  format('truetype'),
-    url('/fonts/Vampire95.svg#Fiesta') format('svg');
+    font-family: 'Vampire95';
+    src: url('/fonts/vampire95.eot') format('embedded-opentype'),
+    url('/fonts/vampire95.woff') format('woff'),
+    url('/fonts/vampire95.ttf')  format('truetype'),
+    url('/fonts/vampire95.svg') format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -22,7 +22,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     height: 100vh;
-    font-family: 'Fiesta';
+    font-family: 'Vampire95';
     font-size: 28px;
     letter-spacing: 0.1em;
     color: rgb(255, 0, 0);
@@ -133,7 +133,7 @@ hr {
     padding: 10px;
     box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.7);
     transition: 0.2s;
-    font-family: 'Fiesta';
+    font-family: 'Vampire95';
     letter-spacing: 0.1em;
     color: rgb(255, 0, 0);
 }
